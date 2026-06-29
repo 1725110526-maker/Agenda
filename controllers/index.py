@@ -2,6 +2,6 @@ import web
 
 render = web.template.render('views', base='layout')
 
-class Contactos:
+class Index:
     def GET(self):
-        return render.contactos()
+        return render.index()
