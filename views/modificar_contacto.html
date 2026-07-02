@@ -1,21 +1,44 @@
-$def with(contacto)
+$def with (contacto)
+<h2>Modificar Contacto</h2>
 
-<form method="POST">
-
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" value=$contacto['nombre'] readonly></input>
-
-    <label for="primer_apellido">Primer Apellido:</label>
-    <input type="text" id="primer_apellido" name="primer_apellido" value=$contacto['primer_apellido'] readonly></input>
-
-    <label for="segundo_apellido">Segundo Apellido</label>
-    <input type="text" id="segundo_apellido" name="segundo_apellido" value=$contacto['segundo_apellido'] readonly></input>
-
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" value=$contacto['email'] readonly></input>
-
-    <label for="telefono">Telefono</label>
-    <input type="text" id="telefono" name="telefono" value=$contacto['telefono'] readonly></input>
-
+<form action="modificar_contacto.html" method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="$contacto['nombre']" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="primer_apellido">Primer Apellido:</label>
+        <input type="text" id="primer_apellido" name="primer_apellido" value="$contacto['primer_apellido']" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="segundo_apellido">Segundo Apellido:</label>
+        <input type="text" id="segundo_apellido" name="segundo_apellido" value="$contacto['segundo_apellido']">
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" value="$contacto['email']" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" value="$contacto['telefono']" required>
+    </div>
+    
+    <div class="actions">
+        <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+    </div>
 </form>
 
+<hr style="margin-top: 30px; border: 0; border-top: 1px solid #eee;">
+
+<!-- Sección integrada para borrar el contacto de forma segura mediante POST -->
+<form action="borrar_contacto.html" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este contacto permanentemente?');">
+    <div class="form-group">
+        <label style="color: #dc3545;">Zona de Peligro</label>
+        <button type="submit" class="btn btn-danger">Eliminar Contacto</button>
+    </div>
+</form>
