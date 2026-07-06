@@ -6,6 +6,7 @@ render = web.template.render('views', base='layout')
 class BorrarContacto:
     
     def POST(self, id_contacto: int):
+        exito = False
         try:
             conexion = sqlite3.connect("sql/agenda.db")
             cursor = conexion.cursor()
@@ -14,8 +15,7 @@ class BorrarContacto:
             
             conexion.commit()
             conexion.close()
-            
-            raise web.seeother('/')
+            exito = True
             
         except sqlite3.Error as error:
             print(f"ERROR 106: {error.args}")
@@ -23,3 +23,5 @@ class BorrarContacto:
         except Exception as error:
             print(f"ERROR 107: {error.args}")
             return "Ocurrió un error inesperado al eliminar."
+        if exito:
+            raise web.seeother('/')

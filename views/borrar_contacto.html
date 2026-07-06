@@ -1,0 +1,17 @@
+$def with (contacto)
+
+<h2>¿Eliminar Contacto?</h2>
+<p>¿Estás seguro de que deseas borrar a este contacto?</p>
+
+<p>
+    <b>ID:</b> $contacto['id_contacto'] <br>
+    <b>Nombre:</b> $contacto['nombre'] $contacto['primer_apellido'] <br>
+    <b>Teléfono:</b> $contacto['telefono']
+</p>
+
+<form method="post" action="/borrar_contacto/$contacto['id_contacto']">
+    
+    <input type="submit" value="Sí, eliminar">
+    
+    <a href="/"><button type="button">Cancelar</button></a>
+</form>
