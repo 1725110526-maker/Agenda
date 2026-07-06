@@ -35,7 +35,7 @@ class VerContacto:
     
     def GET(self,id_contacto:int):
         print(f"ID_CONTACTO: {id_contacto}")
-        contacto = self.buscarContacto(id_contacto)
+        contacto = self.buscarContactos(id_contacto)
         return render.ver.contacto()
     
     

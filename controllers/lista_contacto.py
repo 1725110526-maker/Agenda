@@ -38,4 +38,4 @@ class ListaContactos:
 
     def GET(self):
         contactos = self.consultarContactos()
-        return render.lista_contacto(contactos)
+        return render.lista_contactos(contactos)
