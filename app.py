@@ -4,9 +4,8 @@ urls = (
     '/', 'controllers.index.Index',
     '/lista_contactos','controllers.lista_contacto.ListaContactos',
     '/ver_contacto/(.*)','controllers.ver_contacto.VerContacto',
-    '/modificar_contacto/(.*)','controllers.modificar_contacto.ModificarContacto',
-    '/borrar_contacto/(.*)','controllers.borrar_contacto.BorrarContacto',
-
+    '/editar_contacto/(.*)','controllers.editar_contacto.EditarContacto',
+    '/borrar_contacto(.*)', 'controllers.borrar_contacto.BorrarContacto',
 )
 app = web.application(urls, globals())
 
