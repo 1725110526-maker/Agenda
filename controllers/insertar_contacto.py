@@ -58,6 +58,7 @@ class InsertarContacto:
         }
         
         resultado = self.inserteContacto(contacto)
+        web.ctx.status
         
         if resultado:
             raise web.seeother('/lista_contactos')

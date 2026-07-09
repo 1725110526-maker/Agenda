@@ -10,7 +10,7 @@ class BorrarContacto:
             conexion = sqlite3.connect("sql/agenda.db")
             conexion.row_factory = sqlite3.Row
             cursor = conexion.cursor()
-            query = "SELECT * FROM contactos WHERE id_contacto = ?"
+            query = "DELETE * FROM contactos WHERE id_contacto = ?"
             cursor.execute(query,(id_contacto,))
             resultado = cursor.fetchone()
 
