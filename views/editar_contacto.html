@@ -1,8 +1,9 @@
 $def with(contacto)
+<h1>Editar contacto</h1>
 
 <form  method="post">
     <label for="id_contacto">ID:</label>
-    <input type="text" id="id_contacto" name="id_contacto" value=$contacto['id_contacto']><br><br>
+    <input type="text" id="id_contacto" name="id_contacto" value=$contacto['id_contacto'] readonly><br><br>
 
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" value=$contacto['nombre']><br><br>
@@ -19,6 +20,6 @@ $def with(contacto)
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono" value=$contacto['telefono']><br><br>
 
-    <a href="lista_contactos.html"><button type="button">Regresar</button></a>
-    <button name="editar">editar</button>
+    <a href="/lista_contactos"><button type="button">Regresar</button></a>
+    <button name="editar">Editar</button>
 </form>

@@ -3,7 +3,7 @@ import sqlite3
 
 render = web.template.render('views', base='layout')
 
-class VerContacto:
+class BorrarContacto:
 
     def buscarContacto(self, id_contacto:int):
         try:
@@ -27,12 +27,12 @@ class VerContacto:
             return contacto
         except sqlite3.Error as error:
             print(f"ERROR 102: {error.args}")
-            return {}
+            return []
         except Exception as error:
             print(f"ERROR 103: {error.args}")
-            return {}
+            return []
 
     def GET(self,id_contacto:int):
         print(f"ID_CONTACTO: {id_contacto}")
         contacto = self.buscarContacto(id_contacto)
-        return render.ver_contacto(contacto)
+        return render.borrar_contacto(contacto)
